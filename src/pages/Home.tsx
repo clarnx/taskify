@@ -1,5 +1,6 @@
 import AddTaskFloatingActionButton from "../components/UI/AddTaskFloatingActionButton";
 import StatsCard from "../components/Home/StatsCard";
+import SearchBar from "../components/UI/SearchBar";
 
 const Home = () => {
   return (
@@ -24,6 +25,8 @@ const Home = () => {
           iconBackgroundColor="#f5a52320"
         />
       </div>
+
+      <SearchBar/>
 
       <AddTaskFloatingActionButton />
     </>
