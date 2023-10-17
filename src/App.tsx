@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import useThemeStore from "./hooks/themeStore";
 import Layout from "./components/UI/Layout";
-import Home from "./components/UI/Home/Index";
+import Home from "./components/Home/Index";
 
 function App() {
   const currentTheme = useThemeStore((state: any) => state.currentTheme);
