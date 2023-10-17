@@ -21,7 +21,11 @@ const AddTaskFloatingActionButton = () => {
         <Modal.Body>Woohoo, you are reading this text in a modal!</Modal.Body>
 
         <Modal.Footer className="border-0">
-          <Button variant="secondary" onClick={() => setShowModal(false)}>
+          <Button
+            className="me-2"
+            variant="secondary"
+            onClick={() => setShowModal(false)}
+          >
             Close
           </Button>
           <Button variant="primary" onClick={() => setShowModal(false)}>
