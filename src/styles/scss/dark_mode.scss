@@ -1,131 +1,131 @@
 @import "./brand_colors.scss";
 
 [data-bs-theme="dark"] {
-    /* redefine theme colors for dark theme */
-    $primary: $primary-brand-color__dark-mode;
-    $secondary: $secondary-brand-color__dark-mode;
-    $secondary-alt: $secondary-alt-brand-color__dark-mode;
-    $success: #17c964;
-    $danger: #f21361;
-    $warning: #f5a623;
+  /* redefine theme colors for dark theme */
+  $primary: $primary-brand-color__dark-mode;
+  $secondary: $secondary-brand-color__dark-mode;
+  $secondary-alt: $secondary-alt-brand-color__dark-mode;
+  $success: #17c964;
+  $danger: #f21361;
+  $warning: #f5a623;
 
-    $body-color: $body-text-color__dark-mode;
-    $body-bg: $body-background-color__dark-mode;
+  $body-color: $body-text-color__dark-mode;
+  $body-bg: $body-background-color__dark-mode;
 
-    $form-check-input-checked-bg-color: $primary;
-    $form-switch-color: rgba(#ffffff, 0.6);
+  $form-check-input-checked-bg-color: $primary;
+  $form-switch-color: rgba(#ffffff, 0.6);
 
-    $input-bg: $body-bg;
-    $input-disabled-bg: #222f3e;
-    $input-disabled-color: #ffffff80;
-    $input-disabled-border-color: $body-bg;
-    $input-placeholder-color: #ffffff61;
+  $input-bg: $body-bg;
+  $input-disabled-bg: #222f3e;
+  $input-disabled-color: #ffffff80;
+  $input-disabled-border-color: $body-bg;
+  $input-placeholder-color: #ffffff61;
 
-    $tooltip-color: rgba(#ffffff, 0.8);
+  $tooltip-color: rgba(#ffffff, 0.8);
 
-    $box-shadow: 0 0.5rem 1rem rgba(#000000, 0.15);
+  $box-shadow: 0 0.5rem 1rem rgba(#000000, 0.15);
 
-    $table-striped-bg: rgba(126, 86, 218, 0.025);
+  $table-striped-bg: rgba(126, 86, 218, 0.025);
 
-    $font-weight-bolder: 900;
+  $font-weight-bolder: 900;
 
-    // $card-color: $body-color;
-    // $card-bg: $body-bg;
+  // $card-color: $body-color;
+  // $card-bg: $body-bg;
 
-    $dark: $body-bg;
+  $dark: $body-bg;
 
-    $dropdown-link-hover-bg: $table-striped-bg;
+  $dropdown-link-hover-bg: $table-striped-bg;
 
-    nav .nav-link {
-        color: #f8f9faa6;
-    }
+  nav .nav-link {
+    color: #f8f9faa6;
+  }
 
-    nav a.nav-link.active.fw-bold {
-        color: white;
-    }
+  nav a.nav-link.active.fw-bold {
+    color: white;
+  }
 
-    @import "bootstrap/scss/functions";
-    @import "bootstrap/scss/variables";
-    @import "bootstrap/scss/variables-dark";
+  @import "bootstrap/scss/functions";
+  @import "bootstrap/scss/variables";
+  @import "bootstrap/scss/variables-dark";
 
-    // Disable default dark mode
-    $enable-dark-mode: false;
+  // Disable default dark mode
+  $enable-dark-mode: false;
 
-    $theme-colors: (
-        "primary": $primary,
-        "secondary": $secondary,
-        "light": $light,
-        "dark": $dark,
-        "success": $success,
-        "info": $info,
-        "warning": $warning,
-        "danger": $danger,
-    );
+  $theme-colors: (
+    "primary": $primary,
+    "secondary": $secondary,
+    "light": $light,
+    "dark": $dark,
+    "success": $success,
+    "info": $info,
+    "warning": $warning,
+    "danger": $danger,
+  );
 
-    $custom-colors: (
-        "secondary-alt": $secondary-alt,
-    );
+  $custom-colors: (
+    "secondary-alt": $secondary-alt,
+  );
 
-    // Rebuild all the bg-* and text-* classes
-    $theme-colors: map-merge($theme-colors, $custom-colors);
-    $theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value");
+  // Rebuild all the bg-* and text-* classes
+  $theme-colors: map-merge($theme-colors, $custom-colors);
+  $theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value");
 
-    /* redefine theme color variables */
-    @each $color, $value in $theme-colors {
-        --#{$variable-prefix}#{$color}: #{$value};
-    }
+  /* redefine theme color variables */
+  @each $color, $value in $theme-colors {
+    --#{$variable-prefix}#{$color}: #{$value};
+  }
 
-    @each $color, $value in $theme-colors-rgb {
-        --#{$variable-prefix}#{$color}-rgb: #{$value};
-    }
+  @each $color, $value in $theme-colors-rgb {
+    --#{$variable-prefix}#{$color}-rgb: #{$value};
+  }
 
-    --#{$variable-prefix}body-color: #{$body-color};
-    --#{$variable-prefix}body-bg: #{$body-bg};
+  --#{$variable-prefix}body-color: #{$body-color};
+  --#{$variable-prefix}body-bg: #{$body-bg};
 
-    @import "bootstrap/scss/maps";
-    @import "bootstrap/scss/mixins";
-    @import "bootstrap/scss/utilities";
+  @import "bootstrap/scss/maps";
+  @import "bootstrap/scss/mixins";
+  @import "bootstrap/scss/utilities";
 
-    // Add additional custom code here
-    $utilities: map-merge(
-        $utilities,
-        (
-            "width":
-                map-merge(
-                    map-get($utilities, "width"),
-                    (
-                        responsive: true,
-                    )
-                ),
-        )
-    );
+  // Add additional custom code here
+  $utilities: map-merge(
+    $utilities,
+    (
+      "width":
+        map-merge(
+          map-get($utilities, "width"),
+          (
+            responsive: true,
+          )
+        ),
+    )
+  );
 
-    $utilities: map-merge(
-        $utilities,
-        (
-            "height":
-                map-merge(
-                    map-get($utilities, "height"),
-                    (
-                        responsive: true,
-                    )
-                ),
-        )
-    );
+  $utilities: map-merge(
+    $utilities,
+    (
+      "height":
+        map-merge(
+          map-get($utilities, "height"),
+          (
+            responsive: true,
+          )
+        ),
+    )
+  );
 
-    $utilities: map-merge(
-        $utilities,
-        (
-            "font-size":
-                map-merge(
-                    map-get($utilities, "font-size"),
-                    (
-                        responsive: true,
-                    )
-                ),
-        )
-    );
-    @import "bootstrap/scss/utilities/api";
+  $utilities: map-merge(
+    $utilities,
+    (
+      "font-size":
+        map-merge(
+          map-get($utilities, "font-size"),
+          (
+            responsive: true,
+          )
+        ),
+    )
+  );
+  @import "bootstrap/scss/utilities/api";
 
-    @import "bootstrap/scss/bootstrap";
+  @import "bootstrap/scss/bootstrap";
 }

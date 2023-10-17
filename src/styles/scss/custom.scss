@@ -1,20 +1,20 @@
 @import "./dark_mode.scss";
 
 i.bi.bi-sun-fill {
-    color: #fdb813;
+  color: #fdb813;
 }
 
 ::-webkit-scrollbar {
-    width: 12px;
+  width: 12px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #a2a2a2;
-    border-radius: 20px;
-    border: 3px solid transparent;
-    background-clip: content-box;
+  background-color: #a2a2a2;
+  border-radius: 20px;
+  border: 3px solid transparent;
+  background-clip: content-box;
 }
 
 ::-webkit-scrollbar-track {
-    background: inherit;
+  background: inherit;
 }

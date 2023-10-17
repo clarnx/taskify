@@ -36,18 +36,18 @@ $font-family-base: var(--inter-font), sans-serif;
 $enable-dark-mode: false;
 
 $theme-colors: (
-    "primary": $primary,
-    "secondary": $secondary,
-    "light": $light,
-    "dark": $dark,
-    "success": $success,
-    "info": $info,
-    "warning": $warning,
-    "danger": $danger,
+  "primary": $primary,
+  "secondary": $secondary,
+  "light": $light,
+  "dark": $dark,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
 );
 
 $custom-colors: (
-    "secondary-alt": $secondary-alt,
+  "secondary-alt": $secondary-alt,
 );
 
 // Rebuild all the bg-* and text-* classes
@@ -60,42 +60,42 @@ $theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value");
 
 // Add additional custom code here
 $utilities: map-merge(
-    $utilities,
-    (
-        "width":
-            map-merge(
-                map-get($utilities, "width"),
-                (
-                    responsive: true,
-                )
-            ),
-    )
+  $utilities,
+  (
+    "width":
+      map-merge(
+        map-get($utilities, "width"),
+        (
+          responsive: true,
+        )
+      ),
+  )
 );
 
 $utilities: map-merge(
-    $utilities,
-    (
-        "height":
-            map-merge(
-                map-get($utilities, "height"),
-                (
-                    responsive: true,
-                )
-            ),
-    )
+  $utilities,
+  (
+    "height":
+      map-merge(
+        map-get($utilities, "height"),
+        (
+          responsive: true,
+        )
+      ),
+  )
 );
 
 $utilities: map-merge(
-    $utilities,
-    (
-        "font-size":
-            map-merge(
-                map-get($utilities, "font-size"),
-                (
-                    responsive: true,
-                )
-            ),
-    )
+  $utilities,
+  (
+    "font-size":
+      map-merge(
+        map-get($utilities, "font-size"),
+        (
+          responsive: true,
+        )
+      ),
+  )
 );
 
 @import "bootstrap/scss/utilities/api";
