@@ -2,7 +2,6 @@
 
 @import "./dark_mode.scss";
 
-
 i.bi.bi-sun-fill {
   color: #fdb813;
 }
@@ -20,4 +19,8 @@ i.bi.bi-sun-fill {
 
 ::-webkit-scrollbar-track {
   background: inherit;
+}
+
+body {
+  height: 100vh;
 }
