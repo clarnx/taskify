@@ -9,7 +9,7 @@ const ThemeTogglerIcon = () => {
   };
 
   return (
-    <span className="me-5 me-lg-0" onClick={handleOnClick} role="button">
+    <span onClick={handleOnClick} role="button">
       {(currentTheme === "light" || currentTheme === null) && (
         <i className="bi bi-moon-fill fs-4"></i>
       )}
