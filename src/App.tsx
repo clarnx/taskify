@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
 
-import Navbar from "./components/UI/Navbar";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import useThemeStore from "./hooks/themeStore";
+import Layout from "./components/UI/Layout";
+import Home from "./components/UI/Home/Index";
 
 function App() {
   const currentTheme = useThemeStore((state: any) => state.currentTheme);
@@ -20,9 +22,19 @@ function App() {
         ?.setAttribute("data-bs-theme", currentTheme);
     }
   }, [currentTheme]);
+
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Home/>,
+    },
+  ]);
+
   return (
     <>
-      <Navbar />
+      <Layout>
+        <RouterProvider router={router} />
+      </Layout>
     </>
   );
 }
