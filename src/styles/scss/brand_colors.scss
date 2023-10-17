@@ -1,0 +1,15 @@
+// Light Mode Brand Colors
+$primary-brand-color__light-mode: #7e56da;
+$secondary-brand-color__light-mode: #1c2834;
+$secondary-alt-brand-color__light-mode: #555e67;
+$body-text-color__light-mode: #1c2834;
+$body-background-color__light-mode: #ffffff;
+
+// Dark Mode Brand Colors
+$dark-mode-color: #1c2834;
+
+$primary-brand-color__dark-mode: #7e56da;
+$secondary-brand-color__dark-mode: #c2bbd4;
+$secondary-alt-brand-color__dark-mode: $secondary-brand-color__dark-mode;
+$body-text-color__dark-mode: #ffffff;
+$body-background-color__dark-mode: $dark-mode-color;
