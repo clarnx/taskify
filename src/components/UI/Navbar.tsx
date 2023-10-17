@@ -1,6 +1,7 @@
 import React from "react";
 import ThemeTogglerIcon from "./ThemeTogglerIcon";
 import useThemeStore from "../../hooks/themeStore";
+import NavMenu from "./NavMenu";
 
 const Navbar = () => {
   const currentTheme = useThemeStore((state: any) => state.currentTheme);
@@ -23,7 +24,7 @@ const Navbar = () => {
           >
             TASKIFY
           </a>
-          {/* <NavMenu /> */}
+          <NavMenu />
           <span className="d-flex align-items-center justify-content-center">
             <ThemeTogglerIcon />
           </span>

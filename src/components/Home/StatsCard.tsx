@@ -30,7 +30,7 @@ const StatsCard = ({
                 style={{ color: iconColor }}
               ></i>
             </span>
-            <h3 className="fw-bold fs-2 fs-md-4">{count}</h3>
+            <h3 className="fw-bold fs-2 fs-md-3">{count}</h3>
           </div>
           <div className="w-100 mt-4">
             <p className="opacity-50 mb-0 fw-semibold fs-6">{taskFilter}</p>
