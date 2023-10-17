@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import useThemeStore from "./hooks/themeStore";
 import useAppDataStore from "./hooks/appDataStore";
 import Layout from "./components/UI/Layout";
-import Home from "./components/Home/Index";
+import Home from "./pages/Home";
 
 function App() {
   const currentTheme = useThemeStore((state: any) => state.currentTheme);
