@@ -60,16 +60,16 @@ const TaskCardActionButtons = ({ taskDetails }: any) => {
 
       <IconButton
         toolTipPlacement="top"
-        toolTipText="Delete"
-        icon={<i className="bi bi-trash fs-6 text-danger"></i>}
-        onClickHandler={() => deleteTask(taskDetails?.id)}
+        toolTipText="Copy to clipboard"
+        icon={<i className="bi bi-clipboard-check fs-6 text-warning"></i>}
+        onClickHandler={copyTaskDetailsToClipboard}
       />
 
       <IconButton
         toolTipPlacement="top"
-        toolTipText="Copy to clipboard"
-        icon={<i className="bi bi-clipboard-check fs-6 text-warning"></i>}
-        onClickHandler={copyTaskDetailsToClipboard}
+        toolTipText="Delete"
+        icon={<i className="bi bi-trash fs-6 text-danger"></i>}
+        onClickHandler={() => deleteTask(taskDetails?.id)}
       />
     </>
   );
