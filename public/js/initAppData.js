@@ -14,10 +14,21 @@
 // name
 
 (function initAppData() {
+  const initalTaskDetails = {
+    id: "",
+    taskName: "",
+    description: "",
+    priority: "low",
+    category: "General",
+    status: "in-progress",
+    dueDate: "",
+  };
+
   const currentAppDataInLocalStorage = localStorage.getItem("appData");
   if (currentAppDataInLocalStorage === null) {
     const appData = {
       tasks: [],
+      currentTask: initalTaskDetails,
       taskCategoryList: ["General"],
     };
     localStorage.setItem("appData", JSON.stringify(appData));
