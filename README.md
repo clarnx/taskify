@@ -6,12 +6,13 @@ A minimalistic todo application built with ReactJS using Create React App.
 
 ## Features
 
-- Add task, preview more task details, copy task details to clipboard, and delete tasks
-- Mark tasks as completed or Mark tasks as in-progress
-- Add task category, and delete task category
-- Search tasks (All, Active, Completed, Task Name, Description, Category, Priority, Status)
-- Basic task statistics,
-- Responsive design
+- Add task, preview more task details, copy task details to clipboard, and delete tasks.
+- Mark tasks as completed or Mark tasks as in-progress.
+- Add task category, and delete task category.
+- Search tasks (All, Active, Completed, Task Name, Description, Category, Priority, Status).
+- Basic task statistics.
+- Responsive design.
+- Light and Dark Mode.
 
 ## Getting Started
 
@@ -65,7 +66,7 @@ This will create an optimized build in the build directory.
 ### Usage
 
 - Add a new task by clicking on the floating action button on the bottom right.
-- View more task details by clicking on the eye icon on the task card.
+- View more task details by clicking on the arrow in box icon on the task card.
 - Mark a task as completed by clicking the green check icon on task card.
 - Copy task to clipboard by clicking on the clipboard icon on task card.
 - Delete a task by clicking on the delete icon on task card.
@@ -77,5 +78,5 @@ This will create an optimized build in the build directory.
 ### Acknowledgments
 
 This project was bootstrapped with Create React App.
-UI was designed using Boostrap 5 customized with SCSS and React Bootstrap
-State management used was Zustand
+UI was designed using Boostrap 5 customized with SCSS and React Bootstrap.
+State management used was Zustand.
