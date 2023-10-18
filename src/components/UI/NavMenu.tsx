@@ -12,7 +12,7 @@ const NavMenu = () => {
           </a>
         </li>
         <li className="nav-item">
-          <a href="/Category" className={`nav-link "active fw-bold"}`}>
+          <a href="/task-category" className={`nav-link "active fw-bold"}`}>
             Category
           </a>
         </li>
