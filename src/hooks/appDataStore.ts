@@ -37,12 +37,15 @@ const useAppDataStore = create((set: any) => ({
 
         const parsedAppDataInLocalStorage = JSON.parse(appDataInLocalStorage);
 
-        parsedAppDataInLocalStorage.taskCategoryList.push(category);
+        // Add category only if category does not exist
+        if (!parsedAppDataInLocalStorage.taskCategoryList.includes(category)) {
+          parsedAppDataInLocalStorage.taskCategoryList.push(category);
 
-        localStorage.setItem(
-          "appData",
-          JSON.stringify(parsedAppDataInLocalStorage)
-        );
+          localStorage.setItem(
+            "appData",
+            JSON.stringify(parsedAppDataInLocalStorage)
+          );
+        }
 
         return {
           tasks: parsedAppDataInLocalStorage.tasks,
