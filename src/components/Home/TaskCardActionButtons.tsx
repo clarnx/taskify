@@ -1,7 +1,11 @@
+import toast from "react-hot-toast";
 import useAppDataStore from "../../hooks/appDataStore";
 import IconButton from "../UI/IconButton";
+import { useState } from "react";
+import TaskDetailsModal from "./TaskDetailsModal";
 
 const TaskCardActionButtons = ({ taskDetails }: any) => {
+  const [showTaskDetailsModal, setShowTaskDetailsModal] = useState(false);
   const deleteTask = useAppDataStore((state: any) => state.deleteTask);
 
   const markTaskAsComplete = useAppDataStore(
@@ -18,15 +22,24 @@ const TaskCardActionButtons = ({ taskDetails }: any) => {
     Due Date: ${taskDetails?.dueDate || ""}\n
     `;
     navigator.clipboard.writeText(taskDetailsTextToCopy);
+
+    toast.success("Task details copied to clipboard", {
+      className: "mt-3",
+    });
   };
 
   return (
     <>
+      <TaskDetailsModal
+        showTaskDetailsModal={showTaskDetailsModal}
+        setShowTaskDetailsModal={setShowTaskDetailsModal}
+        taskDetails={taskDetails}
+      />
       <IconButton
         toolTipPlacement="top"
         toolTipText="View more"
         icon={<i className="bi bi-eye fs-6 text-primary"></i>}
-        onClickHandler={() => ""}
+        onClickHandler={() => setShowTaskDetailsModal(true)}
       />
       <IconButton
         toolTipPlacement="top"
