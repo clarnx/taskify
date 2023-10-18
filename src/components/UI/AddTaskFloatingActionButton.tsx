@@ -1,11 +1,22 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 import { Fab } from "react-tiny-fab";
 
 import "react-tiny-fab/dist/styles.css";
+import AddTaskForm from "../Home/AddTaskForm";
+import useAppDataStore from "../../hooks/appDataStore";
 
 const AddTaskFloatingActionButton = () => {
   const [showModal, setShowModal] = useState(false);
+
+  const addTask = useAppDataStore((state: any) => state.addTask);
+
+  const currentTask = useAppDataStore((state: any) => state.currentTask);
+
+  const handleAddTaskButtonOnClick = () => {
+    addTask(currentTask);
+    setShowModal(false);
+  };
 
   return (
     <>
@@ -18,7 +29,9 @@ const AddTaskFloatingActionButton = () => {
         <Modal.Header className="border-0" closeButton>
           <Modal.Title>Add Task</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Woohoo, you are reading this text in a modal!</Modal.Body>
+        <Modal.Body>
+          <AddTaskForm />
+        </Modal.Body>
 
         <Modal.Footer className="border-0">
           <Button
@@ -28,7 +41,8 @@ const AddTaskFloatingActionButton = () => {
           >
             Close
           </Button>
-          <Button variant="primary" onClick={() => setShowModal(false)}>
+
+          <Button variant="primary" onClick={handleAddTaskButtonOnClick}>
             Add
           </Button>
         </Modal.Footer>
