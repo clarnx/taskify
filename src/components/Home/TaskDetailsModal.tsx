@@ -20,11 +20,6 @@ const TaskDetailsModal = ({
         <Modal.Title>More Task Details</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        {/* ` Task Name: ${taskDetails?.taskName || ""}\n Description: $
-        {taskDetails?.description || ""}\n Priority: $
-        {taskDetails?.priority || ""}\n Category: ${taskDetails?.category || ""}
-        \n Status: ${taskDetails?.status || ""}\n Due Date: $
-        {taskDetails?.dueDate || ""}\n ` */}
         <div className="d-flex mb-2">
           <p className="fw-bold me-2">Task Name:</p>
 
