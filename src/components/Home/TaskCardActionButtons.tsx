@@ -8,13 +8,31 @@ const TaskCardActionButtons = ({ taskDetails }: any) => {
     (state: any) => state.markTaskAsComplete
   );
 
+  const copyTaskDetailsToClipboard = () => {
+    const taskDetailsTextToCopy = `
+    Task Name: ${taskDetails?.taskName || ""}\n
+    Description: ${taskDetails?.description || ""}\n
+    Priority: ${taskDetails?.priority || ""}\n
+    Category: ${taskDetails?.category || ""}\n
+    Status: ${taskDetails?.status || ""}\n
+    Due Date: ${taskDetails?.dueDate || ""}\n
+    `;
+    navigator.clipboard.writeText(taskDetailsTextToCopy);
+  };
+
   return (
     <>
       <IconButton
         toolTipPlacement="top"
+        toolTipText="View more"
+        icon={<i className="bi bi-eye fs-6 text-primary"></i>}
+        onClickHandler={() => ""}
+      />
+      <IconButton
+        toolTipPlacement="top"
         toolTipText={
           taskDetails?.status === "completed"
-            ? "Mark In-progress"
+            ? "Mark in-progress"
             : "Mark complete"
         }
         icon={
@@ -32,6 +50,13 @@ const TaskCardActionButtons = ({ taskDetails }: any) => {
         toolTipText="Delete"
         icon={<i className="bi bi-trash fs-6 text-danger"></i>}
         onClickHandler={() => deleteTask(taskDetails?.id)}
+      />
+
+      <IconButton
+        toolTipPlacement="top"
+        toolTipText="Copy to clipboard"
+        icon={<i className="bi bi-clipboard-check fs-6 text-warning"></i>}
+        onClickHandler={copyTaskDetailsToClipboard}
       />
     </>
   );
