@@ -1,10 +1,11 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import useThemeStore from "./hooks/themeStore";
 import useAppDataStore from "./hooks/appDataStore";
 import Layout from "./components/UI/Layout";
 import Home from "./pages/Home";
+import TaskCategory from "./pages/TaskCategory";
 
 function App() {
   const currentTheme = useThemeStore((state: any) => state.currentTheme);
@@ -39,6 +40,10 @@ function App() {
     {
       path: "/",
       element: <Home />,
+    },
+    {
+      path: "/task-category",
+      element: <TaskCategory />,
     },
   ]);
 
