@@ -1,3 +1,5 @@
+import TaskCategoryCard from "./TaskCategoryCard";
+
 const TaskCategoryItems = ({
   taskCategoryList = ["General"],
 }: {
@@ -5,7 +7,7 @@ const TaskCategoryItems = ({
 }) => (
   <>
     {taskCategoryList.map((category: string, index: number) => {
-      return <div key={index}>{category}</div>;
+      return <TaskCategoryCard category={category} index={index} />;
     })}
   </>
 );
