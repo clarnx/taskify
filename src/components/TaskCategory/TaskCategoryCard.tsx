@@ -27,7 +27,7 @@ const TaskCategoryCard = ({ category, index }: any) => {
                 <OverlayTrigger
                   placement="top"
                   delay={{ show: 250, hide: 400 }}
-                  overlay={<Tooltip id="elete-button-tooltip">Delete</Tooltip>}
+                  overlay={<Tooltip>Delete</Tooltip>}
                 >
                   <i className="bi bi-trash fs-6 text-danger"></i>
                 </OverlayTrigger>
