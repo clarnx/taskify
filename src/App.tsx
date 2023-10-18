@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import useThemeStore from "./hooks/themeStore";
@@ -39,11 +39,19 @@ function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Home />,
+      element: (
+        <Suspense fallback={<div>Loading...</div>}>
+          <Home />
+        </Suspense>
+      ),
     },
     {
       path: "/task-category",
-      element: <TaskCategory />,
+      element: (
+        <Suspense fallback={<div>Loading...</div>}>
+          <TaskCategory />
+        </Suspense>
+      ),
     },
   ]);
 
