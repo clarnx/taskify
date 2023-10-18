@@ -9,14 +9,13 @@ const TaskCard = ({ taskDetails }: any) => {
           <div className="row">
             <div className="col-12 col-md-8">
               <h6 className="card-title fw-bold mb-0">
-                <a
-                  href={``}
-                  className="link-secondary-alt text-decoration-none"
-                >
-                  {/* {taskDetails.title} */}
-                  Walk the dog
+                <a className="link-secondary-alt text-decoration-none">
+                  {taskDetails?.taskName}
                 </a>
               </h6>
+              <small className="fw-medium fst-italic opacity-50">
+                {taskDetails?.category}
+              </small>
 
               <div className="d-flex flex-row mt-3 mt-md-2">
                 <div className="">
@@ -26,7 +25,7 @@ const TaskCard = ({ taskDetails }: any) => {
                       backgroundColor: "#17c96420",
                     }}
                   >
-                    In-progress
+                    {taskDetails?.status}
                   </span>
                 </div>
 
@@ -39,7 +38,7 @@ const TaskCard = ({ taskDetails }: any) => {
                         backgroundColor: "#0dcaf020",
                       }}
                     >
-                      low
+                      {taskDetails?.priority}
                     </span>
                   </div>
                   {/* <small>{formatDate(taskDetails.createdAt)}</small> */}
