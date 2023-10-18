@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import initalTaskDetails from "../data/initialTaskDetails";
 
 const useAppDataStore = create((set: any) => ({
   tasks: [],
@@ -19,9 +20,54 @@ const useAppDataStore = create((set: any) => ({
 
         return {
           tasks: parsedAppDataInLocalStorage.tasks,
-          currentTask: state.currentTask,
+          currentTask: parsedAppDataInLocalStorage.currentTask,
           taskCategoryList: parsedAppDataInLocalStorage.taskCategoryList,
           taskSearchResults: state.taskCategoryList,
+        };
+      }
+    ),
+  setCurrentTaskDetails: (currentTask: any) =>
+    set(
+      (state: {
+        tasks: string[];
+        currentTask: any;
+        taskCategoryList: string[];
+        taskSearchResults: string[];
+      }) => {
+        return {
+          ...state,
+          currentTask,
+        };
+      }
+    ),
+
+  addTask: (currentTask: any) =>
+    set(
+      (state: {
+        tasks: string[];
+        currentTask: any;
+        taskCategoryList: string[];
+        taskSearchResults: string[];
+      }) => {
+        const appDataInLocalStorage = localStorage.getItem("appData") as string;
+
+        const parsedAppDataInLocalStorage = JSON.parse(appDataInLocalStorage);
+
+        parsedAppDataInLocalStorage.tasks = [
+          ...parsedAppDataInLocalStorage.tasks,
+          currentTask,
+        ];
+
+        // Add task to local storage
+        localStorage.setItem(
+          "appData",
+          JSON.stringify(parsedAppDataInLocalStorage)
+        );
+
+        return {
+          ...state,
+          tasks: [...parsedAppDataInLocalStorage.tasks],
+          currentTask: initalTaskDetails,
         };
       }
     ),
