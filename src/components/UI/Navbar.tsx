@@ -13,7 +13,7 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`navbar ${currentNavbarThemeClass} navbar-expand-lg ${shadowClassOnThemeToggle}`}
+        className={`navbar ${currentNavbarThemeClass} navbar-expand-lg ${shadowClassOnThemeToggle} sticky-top`}
         data-bs-theme={currentTheme}
       >
         <div className="container align-items-center justify-content-between py-2 px-4 px-md-5">
