@@ -1,7 +1,7 @@
 const NavMenu = () => {
   return (
-    <div className="collapse navbar-collapse">
-      <ul className="navbar-nav justify-content-center flex-grow-1 fs-md-6">
+    <div className="">
+      <ul className="navbar-nav flex-row justify-content-center align-items-center flex-grow-1 fs-md-6 gap-3">
         <li className="nav-item">
           <a
             href="/"

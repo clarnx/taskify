@@ -34,7 +34,7 @@ const TaskCategory = () => {
         />
       </div>
 
-      <div className="w-100 w-md-50 mt-4">
+      <div className="w-100 mt-4 d-flex  flex-column justify-content-center align-items-center gap-4">
         {taskCategoryList?.length > 0 ? (
           <TaskCategoryItems taskCategoryList={taskCategoryList} />
         ) : (
