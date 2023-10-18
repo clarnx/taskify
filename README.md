@@ -64,14 +64,15 @@ This will create an optimized build in the build directory.
 
 ### Usage
 
-Add a new task by typing in the input field and pressing Enter.
-Edit a task by clicking on it.
-Mark a task as completed by clicking the checkbox.
-Delete a task by clicking the delete button.
-Filter tasks by clicking on the buttons at the bottom (All, Active, Completed).
-Clear completed tasks by clicking the "Clear Completed" button.
-Contributing
-Feel free to open issues or submit pull requests for any improvements or bug fixes.
+- Add a new task by clicking on the floating action button on the bottom right.
+- View more task details by clicking on the eye icon on the task card.
+- Mark a task as completed by clicking the green check icon on task card.
+- Copy task to clipboard by clicking on the clipboard icon on task card.
+- Delete a task by clicking on the delete icon on task card.
+- Filter tasks by using the search input based on a search query.
+- View all categories by navigating to the category route by clicking on Category link in the navbar.
+- On the category page add a category by typing text in input and then hit enter.
+- Delete a category by clicking on the delete icon on task card.
 
 ### Acknowledgments
 
