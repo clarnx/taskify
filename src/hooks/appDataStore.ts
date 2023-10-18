@@ -55,6 +55,47 @@ const useAppDataStore = create((set: any) => ({
         };
       }
     ),
+  deleteTaskCategory: (category: string, index: number) =>
+    set(
+      (state: {
+        tasks: string[];
+        currentTask: any;
+        taskCategoryList: string[];
+        taskSearchResults: string[];
+      }) => {
+        const appDataInLocalStorage = localStorage.getItem("appData") as string;
+
+        const categoryToDelete = category;
+
+        const parsedAppDataInLocalStorage = JSON.parse(appDataInLocalStorage);
+
+        // Remove category from list
+        if (
+          category.length > 0 ||
+          category !== null ||
+          category !== undefined
+        ) {
+          const updatedCategoryList =
+            parsedAppDataInLocalStorage.taskCategoryList.filter(
+              (category: string) => category !== categoryToDelete
+            );
+
+          parsedAppDataInLocalStorage.taskCategoryList = updatedCategoryList;
+
+          localStorage.setItem(
+            "appData",
+            JSON.stringify(parsedAppDataInLocalStorage)
+          );
+        }
+
+        return {
+          tasks: parsedAppDataInLocalStorage.tasks,
+          currentTask: state.currentTask,
+          taskCategoryList: parsedAppDataInLocalStorage.taskCategoryList,
+          taskSearchResults: state.taskCategoryList,
+        };
+      }
+    ),
 }));
 
 export default useAppDataStore;
