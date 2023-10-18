@@ -33,7 +33,7 @@ const TaskCard = ({ taskDetails }: any) => {
 
   return (
     <div className="w-100 w-md-50">
-      <div className="card rounded-3 h-100 shadow mb-3 border-0 py-3">
+      <div className="card rounded-3 h-100 shadow mb-4 border-0 py-3">
         <div className="card-body pb-0">
           <div className="row">
             <div className="col-12 col-md-8">
