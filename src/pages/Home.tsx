@@ -30,7 +30,7 @@ const Home = () => {
         />
       </div>
 
-      <SearchBar />
+      <SearchBar placeholder="Search tasks" />
 
       <section className="w-100 d-flex flex-column justify-content-center align-items-center my-4">
         <span className="w-100 w-md-50 fw-bolder">

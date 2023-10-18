@@ -12,7 +12,7 @@ const StatsCard = ({
   iconClass: string
 }) => {
   return (
-    <span className="col-12 col-sm-3 gx-0 gx-md-3 gy-3 gy-md-4 gx-lg-5" style={{height: "110px"}}>
+    <span className="col-12 col-sm-3 gx-0 gx-md-3 gy-3 gy-md-4 gx-lg-5 mt-0" style={{height: "110px"}}>
       <a
         href="/"
         className="card h-100 border-0 rounded-3 shadow text-decoration-none"
