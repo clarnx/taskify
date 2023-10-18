@@ -61,7 +61,7 @@ const TaskCardActionButtons = ({ taskDetails }: any) => {
       <IconButton
         toolTipPlacement="top"
         toolTipText="Copy to clipboard"
-        icon={<i className="bi bi-clipboard-check fs-6 text-dark opacity-75"></i>}
+        icon={<i className="bi bi-clipboard-check fs-6 opacity-75"></i>}
         onClickHandler={copyTaskDetailsToClipboard}
       />
 
