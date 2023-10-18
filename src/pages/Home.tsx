@@ -3,9 +3,20 @@ import StatsCard from "../components/Home/StatsCard";
 import SearchBar from "../components/UI/SearchBar";
 import TaskCard from "../components/Home/TaskCard";
 import useAppDataStore from "../hooks/appDataStore";
+import { useState } from "react";
 
 const Home = () => {
+  const [searchInputValue, setSearchInputValue] = useState("");
+
   const tasks = useAppDataStore((state: any) => state.tasks);
+
+  const taskSearchResults = useAppDataStore(
+    (state: any) => state.taskSearchResults
+  );
+
+  const setTaskSearchResults = useAppDataStore(
+    (state: any) => state.setTaskSearchResults
+  );
 
   const allTasksCount = tasks?.length || 0;
 
@@ -19,6 +30,11 @@ const Home = () => {
   const completedTasksCount = completedTasks?.length || 0;
 
   const unCompletedTasksCount = unCompletedTasks?.length || 0;
+
+  const onSearchInputHandler = (e: any) => {
+    setSearchInputValue(e.target.value.trim());
+    setTaskSearchResults(searchInputValue);
+  };
 
   return (
     <>
@@ -46,18 +62,38 @@ const Home = () => {
         />
       </div>
 
-      <SearchBar placeholder="Search tasks" />
+      <SearchBar
+        placeholder="Search tasks"
+        onInputHandler={onSearchInputHandler}
+      />
 
       <section className="w-100 d-flex flex-column justify-content-center align-items-center my-4">
         <span className="w-100 w-md-50 fw-bolder">
           <h4 className="mb-4">Tasks</h4>
         </span>
 
-        {tasks?.length > 0
-          ? tasks?.map((task: any, index: number) => (
+        {searchInputValue?.length > 0 &&
+          [...taskSearchResults]
+            ?.reverse()
+            ?.map((task: any, index: number) => (
               <TaskCard taskDetails={task} key={index} />
-            ))
-          : "No added category"}
+            ))}
+
+        {searchInputValue?.length > 0 &&
+          taskSearchResults?.length === 0 &&
+          "No result"}
+
+        {tasks?.length > 0 &&
+          searchInputValue?.length === 0 &&
+          [...tasks]
+            ?.reverse()
+            ?.map((task: any, index: number) => (
+              <TaskCard taskDetails={task} key={index} />
+            ))}
+
+        {tasks?.length === 0 &&
+          searchInputValue?.length === 0 &&
+          "No added task"}
       </section>
 
       <AddTaskFloatingActionButton />
