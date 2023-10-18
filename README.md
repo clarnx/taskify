@@ -9,7 +9,7 @@ A minimalistic todo application built with ReactJS using Create React App.
 - Add task, preview more task details, copy task details to clipboard, and delete tasks.
 - Mark tasks as completed or Mark tasks as in-progress.
 - Add task category, and delete task category.
-- Search tasks (All, Active, Completed, Task Name, Description, Category, Priority, Status).
+- Search or filter tasks (All, Active, Completed, Task Name, Description, Category, Priority, Status).
 - Basic task statistics.
 - Responsive design.
 - Light and Dark Mode.
