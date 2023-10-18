@@ -15,7 +15,7 @@ const TaskCategory = () => {
     const currentCategory = e.target.value;
     if (e.key === "Enter") {
       addTaskCategory(currentCategory);
-      e.target.value = ""
+      e.target.value = "";
     }
   };
 
@@ -34,11 +34,11 @@ const TaskCategory = () => {
         />
       </div>
 
-      <div className="w-100 mt-4 d-flex  flex-column justify-content-center align-items-center gap-4">
+      <div className="w-100 mt-4 d-flex flex-column justify-content-center align-items-center gap-4">
         {taskCategoryList?.length > 0 ? (
           <TaskCategoryItems taskCategoryList={taskCategoryList} />
         ) : (
-          "No added category"
+          "No added task"
         )}
       </div>
     </div>
