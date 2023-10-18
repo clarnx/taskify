@@ -20,7 +20,34 @@ const useAppDataStore = create((set: any) => ({
         return {
           tasks: parsedAppDataInLocalStorage.tasks,
           currentTask: state.currentTask,
-          taskCategoryList: parsedAppDataInLocalStorage.taskCategory,
+          taskCategoryList: parsedAppDataInLocalStorage.taskCategoryList,
+          taskSearchResults: state.taskCategoryList,
+        };
+      }
+    ),
+  addTaskCategory: (category: string) =>
+    set(
+      (state: {
+        tasks: string[];
+        currentTask: any;
+        taskCategoryList: string[];
+        taskSearchResults: string[];
+      }) => {
+        const appDataInLocalStorage = localStorage.getItem("appData") as string;
+
+        const parsedAppDataInLocalStorage = JSON.parse(appDataInLocalStorage);
+
+        parsedAppDataInLocalStorage.taskCategoryList.push(category);
+
+        localStorage.setItem(
+          "appData",
+          JSON.stringify(parsedAppDataInLocalStorage)
+        );
+
+        return {
+          tasks: parsedAppDataInLocalStorage.tasks,
+          currentTask: state.currentTask,
+          taskCategoryList: parsedAppDataInLocalStorage.taskCategoryList,
           taskSearchResults: state.taskCategoryList,
         };
       }
