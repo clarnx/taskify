@@ -154,6 +154,11 @@ const useAppDataStore = create((set: any) => ({
           (task: any) => task?.id !== currentTaskId
         );
 
+        // Task deleted during search must update the taskSearchResults list
+        const updatedTaskSearchResultsList = state.taskSearchResults?.filter(
+          (task: any) => task?.id !== currentTaskId
+        );
+
         parsedAppDataInLocalStorage.tasks = [...updatedTaskList];
 
         // Add task to local storage
@@ -166,6 +171,7 @@ const useAppDataStore = create((set: any) => ({
           ...state,
           tasks: [...parsedAppDataInLocalStorage.tasks],
           currentTask: initalTaskDetails,
+          taskSearchResults: [...updatedTaskSearchResultsList],
         };
       }
     ),
