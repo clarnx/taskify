@@ -2,9 +2,13 @@ import { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 import { Fab } from "react-tiny-fab";
 
-import "react-tiny-fab/dist/styles.css";
 import AddTaskForm from "../Home/AddTaskForm";
 import useAppDataStore from "../../hooks/appDataStore";
+import ShortUniqueId from "short-unique-id";
+
+import "react-tiny-fab/dist/styles.css";
+
+const { randomUUID } = new ShortUniqueId({ length: 10 });
 
 const AddTaskFloatingActionButton = () => {
   const [showModal, setShowModal] = useState(false);
@@ -14,7 +18,10 @@ const AddTaskFloatingActionButton = () => {
   const currentTask = useAppDataStore((state: any) => state.currentTask);
 
   const handleAddTaskButtonOnClick = () => {
-    addTask(currentTask);
+    const currentTaskId = randomUUID();
+
+    addTask({ ...currentTask, id: currentTaskId });
+
     setShowModal(false);
   };
 
