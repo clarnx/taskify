@@ -35,7 +35,7 @@ const TaskCategory = () => {
       </div>
 
       <div className="w-100 w-md-50 mt-4">
-        {taskCategoryList.length > 0 ? (
+        {taskCategoryList?.length > 0 ? (
           <TaskCategoryItems taskCategoryList={taskCategoryList} />
         ) : (
           "No added category"
