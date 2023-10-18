@@ -7,7 +7,7 @@ const TaskCategoryItems = ({
 }) => (
   <>
     {taskCategoryList.map((category: string, index: number) => {
-      return <TaskCategoryCard category={category} index={index} />;
+      return <TaskCategoryCard category={category} index={index} key={index} />;
     })}
   </>
 );
