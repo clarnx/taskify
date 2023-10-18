@@ -38,7 +38,7 @@ const TaskCardActionButtons = ({ taskDetails }: any) => {
       <IconButton
         toolTipPlacement="top"
         toolTipText="View more"
-        icon={<i className="bi bi-eye fs-6 text-primary"></i>}
+        icon={<i className="bi bi-box-arrow-up-right fs-6 text-primary"></i>}
         onClickHandler={() => setShowTaskDetailsModal(true)}
       />
       <IconButton
