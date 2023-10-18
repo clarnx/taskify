@@ -8,7 +8,7 @@ const SearchBar = ({
   onInputHandler: any;
 }) => {
   return (
-    <div className="w-100 d-flex justify-content-center align-items-center mt-5">
+    <div className="w-100 d-flex justify-content-center align-items-center mt-4 mt-md-5">
       <Form.Control
         className="w-100 w-md-50 shadow-none border border-2 border-secondary-subtle opacity-50"
         type="text"
