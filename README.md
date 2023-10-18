@@ -1,46 +1,80 @@
-# Getting Started with Create React App
+# Taskify
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A minimalistic todo application built with ReactJS using Create React App.
 
-## Available Scripts
+![Demo](demo.gif)
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- Add task, preview more task details, copy task details to clipboard, and delete tasks
+- Mark tasks as completed or Mark tasks as in-progress
+- Add task category, and delete task category
+- Search tasks (All, Active, Completed, Task Name, Description, Category, Priority, Status)
+- Basic task statistics,
+- Responsive design
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Getting Started
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-### `npm test`
+### Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Node.js and npm (Node Package Manager) installed on your system.
 
-### `npm run build`
+### Installing
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository to your local machine:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+git clone https://github.com/clarnx/taskify.git
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Navigate to the project directory:
 
-### `npm run eject`
+```bash
+cd taskify
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+3. Install the required dependencies:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npm install
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Running the Application
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+To start the application, use the following command:
 
-## Learn More
+```bash
+npm start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+This will run the app in development mode.
+Open http://localhost:3000 to view it in your browser.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Building for Production
+
+To build the app for production, use:
+
+```bash
+npm run build
+```
+
+This will create an optimized build in the build directory.
+
+### Usage
+
+Add a new task by typing in the input field and pressing Enter.
+Edit a task by clicking on it.
+Mark a task as completed by clicking the checkbox.
+Delete a task by clicking the delete button.
+Filter tasks by clicking on the buttons at the bottom (All, Active, Completed).
+Clear completed tasks by clicking the "Clear Completed" button.
+Contributing
+Feel free to open issues or submit pull requests for any improvements or bug fixes.
+
+### Acknowledgments
+
+This project was bootstrapped with Create React App.
+UI was designed using Boostrap 5 customized with SCSS and React Bootstrap
+State management used was Zustand
