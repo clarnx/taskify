@@ -18,7 +18,7 @@
   if (currentAppDataInLocalStorage === null) {
     const appData = {
       tasks: [],
-      taskCategory: [],
+      taskCategoryList: ["General"],
     };
     localStorage.setItem("appData", JSON.stringify(appData));
   }
