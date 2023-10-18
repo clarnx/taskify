@@ -1,4 +1,3 @@
-import React from "react";
 import ThemeTogglerIcon from "./ThemeTogglerIcon";
 import useThemeStore from "../../hooks/themeStore";
 import NavMenu from "./NavMenu";
