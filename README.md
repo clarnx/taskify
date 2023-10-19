@@ -2,8 +2,6 @@
 
 A minimalistic todo application built with ReactJS using Create React App.
 
-![Demo](demo.gif)
-
 ## Features
 
 - Add task, preview more task details, copy task details to clipboard, and delete tasks.
